@@ -1,0 +1,2 @@
+colorscheme gruvbox-dark
+add-highlighter global/ show-whitespaces -spc '+' -indent '+'
