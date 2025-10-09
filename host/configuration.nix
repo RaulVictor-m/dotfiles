@@ -54,6 +54,7 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  home-manager.users.raul = import ./../home-manager/home.nix;
   users.users.raul = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.

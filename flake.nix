@@ -11,15 +11,13 @@
   let
     system = "x86_64-linux";
   in {
-    nixosConfiguration.host = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.host = nixpkgs.lib.nixosSystem {
       pkgs = import nixpkgs { inherit system; };
       modules = [
         ./host/configuration.nix
         home-manager.nixosModules.home-manager
       ];
-      configuration = {
-        home-manager.users.raul = import ./home-manager/home.nix;
-      };
+
     };
     homeConfigurations.raul = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs { inherit system; };
