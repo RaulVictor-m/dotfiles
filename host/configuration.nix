@@ -11,6 +11,7 @@
     ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  environment.variables.EDITOR = "kak";
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
@@ -55,13 +56,22 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       i3
+      i3status
+      dmenu
 
       gcc
 
       qutebrowser
+      brave
       alacritty
+      zathura
+
+      fastfetch
+      inxi
+      xclip
 
       kakoune
+      tmux
     ];
   };
 

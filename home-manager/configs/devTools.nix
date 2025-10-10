@@ -1,11 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.kakoune
-    pkgs.git
-
-    pkgs.gcc
+  imports = [
+    ./kak.nix
   ];
 
   programs.git = {
@@ -24,7 +21,8 @@
     };
   };
 
-  home.sessionVariables = {
-    EDITOR = "kak";
-  };
+
+  home.file.".xinitrc".text = ''
+    exec i3
+  '';
 }

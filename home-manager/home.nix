@@ -8,9 +8,6 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./modules/wm.nix
-    ./modules/packages.nix
-    ./modules/devTools.nix
-    ./modules/configs.nix
+    ./configs/devTools.nix
   ];
 }
