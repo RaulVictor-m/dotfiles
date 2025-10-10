@@ -19,6 +19,6 @@
 
 
   home.file.".xinitrc".text = ''
-    exec i3
+    exec dwm
   '';
 }

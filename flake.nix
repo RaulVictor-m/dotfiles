@@ -28,6 +28,7 @@
         ./home-manager/configs/kak.nix
         ./home-manager/configs/devTools.nix
         ./home-manager/configs/dwm/dwm.nix
+        ./home-manager/configs/qutebrowser.nix
       ];
       extraSpecialArgs = {inherit dwm system; };
     };
