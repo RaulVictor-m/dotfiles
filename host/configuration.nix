@@ -65,7 +65,7 @@
       gnumake
 
       unzip
-      tar
+      gnutar
 
       qutebrowser
       brave
@@ -90,7 +90,7 @@
     gnumake
 
     unzip
-    tar
+    gnutar
 
     fastfetch
     inxi
