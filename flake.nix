@@ -15,10 +15,10 @@
       pkgs = import nixpkgs { inherit system; };
       modules = [
         ./host/configuration.nix
-        home-manager.nixosModules.home-manager
       ];
 
     };
+
     homeConfigurations.raul = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs { inherit system; };
       modules = [

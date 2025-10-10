@@ -6,11 +6,12 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
 
@@ -21,10 +22,6 @@
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -51,31 +48,28 @@
   #   pulse.enable = true;
   # };
 
-  # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  home-manager.users.raul = import ./../home-manager/home.nix;
   users.users.raul = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    #packages = with pkgs; [
-    #];
+    packages = with pkgs; [
+      i3
+
+      gcc
+
+      qutebrowser
+      alacritty
+
+      kakoune
+    ];
   };
 
-  # programs.firefox.enable = true;
-
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     kakoune # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     curl
   ];
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   networking.firewall.enable = false;
 
