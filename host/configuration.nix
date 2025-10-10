@@ -56,6 +56,7 @@
   users.users.raul = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    initialPassword = "__nixos__";
     packages = with pkgs; [
       i3
       i3status
