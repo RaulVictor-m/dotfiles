@@ -11,8 +11,8 @@
     ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
 
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -36,6 +36,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.displayManager.startx.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
