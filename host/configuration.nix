@@ -51,6 +51,8 @@
 
   services.libinput.enable = true;
 
+  networking.firewall.enable = false;
+
   users.users.raul = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
@@ -60,11 +62,16 @@
       dmenu
 
       gcc
+      gnumake
+
+      unzip
+      tar
 
       qutebrowser
       brave
       alacritty
       zathura
+      feh
 
       fastfetch
       inxi
@@ -76,12 +83,19 @@
   };
 
   environment.systemPackages = with pkgs; [
-    kakoune # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    kakoune
     curl
+
+    gcc
+    gnumake
+
+    unzip
+    tar
+
+    fastfetch
+    inxi
+    xclip
   ];
-
-
-  networking.firewall.enable = false;
 
   system.stateVersion = "25.05"; 
 }

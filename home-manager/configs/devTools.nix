@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./kak.nix
-  ];
-
   programs.git = {
     enable = true;
     userName = "RaulVictor-m";
