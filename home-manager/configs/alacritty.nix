@@ -2,8 +2,6 @@
 
 {
   programs.alacritty.enable = true;
-  programs.alacritty.font = {
-    size = 12;
-    family = "Source Code Pro";
-  };
+  programs.alacritty.settings.font.size = 12;
+  programs.alacritty.settings.font.normal.family = "monospace";
 }
