@@ -12,18 +12,6 @@
     showMatching = true;
     indentWidth  = 4;
 
-    showWhitespace = {
-      enable = true;
-      space  = "•";
-      nonBreakingSpa  = "•";
-    };
-
-    numberLines = {
-      enable = true;
-      highlightCursor = true;
-      relative = true;
-    };
-
     wrapLines = {
       enable = true;
       word = true;
@@ -34,6 +22,9 @@
   };
 
   programs.kakoune.extraConfig = ''
+    add-highlighter global/ show-whitespaces -spc '•' -indent '•'
+    add-highlighter global/ number-lines -relative -hlcursor -min-digits 3 -separator " " -cursor-separator "▏"
+
     map -docstring "comment selected lines" global user c ":comment-line<ret>"
     map -docstring "yank to the system clipboard" global user y '<a-|>xclip -i -selection clipboard <ret>'
     map -docstring "paste from the system clipboard" global user p '<a-!>xclip -o -selection clipboard <ret>'
