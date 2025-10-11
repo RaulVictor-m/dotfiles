@@ -6,8 +6,6 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     initialPassword = "__nixos__";
     packages = with pkgs; [
-      i3
-      i3status
       dmenu
 
       gcc
@@ -28,12 +26,15 @@
 
       kakoune
       tmux
+
+      home-manager
     ];
   };
 
   environment.systemPackages = with pkgs; [
     kakoune
     curl
+    git
 
     gcc
     gnumake
