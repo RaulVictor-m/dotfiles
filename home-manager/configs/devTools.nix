@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{pkgs, ... }:
 
 {
   programs.git = {
@@ -17,8 +17,4 @@
     };
   };
 
-
-  home.file.".xinitrc".text = ''
-    exec dwm
-  '';
 }

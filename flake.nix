@@ -5,11 +5,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    dwm.url = "path:./home-manager/configs/dwm";
   };
 
-  outputs = { self, nixpkgs, home-manager, dwm, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
   in {
@@ -17,6 +15,12 @@
       pkgs = import nixpkgs { inherit system; };
       modules = [
         ./host/configuration.nix
+        ./host/audio.nix
+        ./host/locale.nix
+        ./host/networking.nix
+        ./host/packages.nix
+        ./host/system.nix
+        ./host/xsession.nix
       ];
 
     };
@@ -25,13 +29,13 @@
       pkgs = import nixpkgs { inherit system; };
       modules = [
         ./home-manager/home.nix
-        ./home-manager/configs/kak.nix
         ./home-manager/configs/devTools.nix
-        ./home-manager/configs/dwm/dwm.nix
+        ./home-manager/configs/wm.nix
+
+        ./home-manager/configs/kak.nix
         ./home-manager/configs/qutebrowser.nix
         ./home-manager/configs/alacritty.nix
       ];
-      extraSpecialArgs = {inherit dwm system; };
     };
   };
 }
