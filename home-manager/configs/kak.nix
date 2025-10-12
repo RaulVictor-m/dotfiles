@@ -33,7 +33,6 @@
   };
 
   programs.kakoune.extraConfig = ''
-
     add-highlighter global/ show-whitespaces -spc '•' -indent '•'
     add-highlighter global/ number-lines -relative -hlcursor -min-digits 3 -separator " " -cursor-separator "▏"
 
