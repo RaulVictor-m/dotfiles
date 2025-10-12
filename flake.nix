@@ -22,6 +22,7 @@
         ./host/packages.nix
         ./host/system.nix
         ./host/xsession.nix
+        ./host/shell.nix
       ];
 
       specialArgs = {

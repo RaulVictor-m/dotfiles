@@ -19,6 +19,7 @@
       alacritty
       zathura
       feh
+      fish
 
       fastfetch
       inxi
@@ -52,6 +53,7 @@
     chromium
     alacritty
     zathura
+    fish
 
     fastfetch
     inxi
