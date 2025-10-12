@@ -1,7 +1,7 @@
 { config, lib, pkgs, user, ... }:
 
 {
-  nix.registry.sys {
+  nix.registry.sys = {
     to = {
       type = "path";
       path = ../.;
@@ -9,7 +9,8 @@
     exact = false;
   };
 
-  users.defaultUserShell = pkgs.bash;
-  users.users."${user}".shell = pkgs.bash;
+  users.defaultUserShell = pkgs.fish;
+  programs.fish.enable = true;
+  users.users."${user}".shell = pkgs.fish;
 }
 

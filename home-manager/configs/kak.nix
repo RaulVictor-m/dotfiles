@@ -133,5 +133,6 @@
           face global BufferPadding      ''${bg2},''${bg}
           face global Whitespace         ''${bg2}+f
       "
+  }
   '';
 }
