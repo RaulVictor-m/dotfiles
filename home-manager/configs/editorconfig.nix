@@ -2,21 +2,19 @@
 
 {
   editorconfig.enable = true;
-  editorconfig.setting = {
-    root = true;
-
+  editorconfig.settings = {
     "*" = {
-      indent_style = space;
+      indent_style = "space";
       indent_size  = 4;
     };
 
     "*.nim" = {
-      indent_style = space;
+      indent_style = "space";
       indent_size  = 2;
     };
 
-    "*.nim" = {
-      indent_style = space;
+    "*.nix" = {
+      indent_style = "space";
       indent_size  = 2;
     };
   };

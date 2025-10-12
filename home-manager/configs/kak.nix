@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     kakoune-lsp
-    fzf-kak
+    kakounePlugins.fzf-kak
   ];
 
   home.sessionVariables = {
