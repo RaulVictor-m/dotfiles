@@ -1,6 +1,9 @@
 {pkgs, ...}:
 
 {
+  home.packages = with pkgs; [
+      editorconfig-core-c
+  ];
   editorconfig.enable = true;
   editorconfig.settings = {
     "*" = {
