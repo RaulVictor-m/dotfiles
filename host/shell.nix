@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, user, ... }:
 
 {
   nix.registry.sys {
@@ -9,6 +9,7 @@
     exact = false;
   };
 
-  users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.bash;
+  users.users."${user}".shell = pkgs.bash;
 }
 
