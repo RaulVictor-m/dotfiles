@@ -68,6 +68,7 @@
     tree
     time
     file
+    openssh
     dust
   ];
 }
