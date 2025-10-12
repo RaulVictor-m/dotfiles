@@ -1,7 +1,7 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, user, ... }:
 
 {
-  users.users.raul = {
+  users.users."${user}" = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     initialPassword = "__nixos__";
@@ -28,6 +28,7 @@
       tmux
 
       home-manager
+      nh
     ];
   };
 
@@ -35,15 +36,36 @@
     kakoune
     curl
     git
+    python3
+    openscad
 
     gcc
     gnumake
+    gdb
+    gf
 
     unzip
     gnutar
 
+    qutebrowser
+    brave
+    chromium
+    alacritty
+    zathura
+
     fastfetch
     inxi
+    feh
     xclip
+
+    # utils
+    coreutils
+    pkg-config
+    clang
+    objconv
+    tree
+    time
+    file
+    dust
   ];
 }

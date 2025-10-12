@@ -10,6 +10,7 @@
   outputs = { self, nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
+    user = "raul";
   in {
     nixosConfigurations.host = nixpkgs.lib.nixosSystem {
       pkgs = import nixpkgs { inherit system; };
@@ -23,9 +24,13 @@
         ./host/xsession.nix
       ];
 
+      specialArgs = {
+          inherit user;
+      };
+
     };
 
-    homeConfigurations.raul = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."${user}" = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs { inherit system; };
       modules = [
         ./home-manager/home.nix
@@ -33,9 +38,15 @@
         ./home-manager/configs/wm.nix
 
         ./home-manager/configs/kak.nix
+        ./home-manager/configs/editorconfig.nix
         ./home-manager/configs/qutebrowser.nix
         ./home-manager/configs/alacritty.nix
       ];
+
+      extraSpecialArgs = {
+          inherit user;
+      };
+
     };
   };
 }

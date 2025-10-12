@@ -1,6 +1,11 @@
 {pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    kakoune-lsp
+    fzf-kak
+  ];
+
   home.sessionVariables = {
     EDITOR = "kak";
   };
@@ -22,6 +27,8 @@
   };
 
   programs.kakoune.extraConfig = ''
+    editorconfig-load
+
     add-highlighter global/ show-whitespaces -spc '•' -indent '•'
     add-highlighter global/ number-lines -relative -hlcursor -min-digits 3 -separator " " -cursor-separator "▏"
 
@@ -33,5 +40,10 @@
     map -docstring "lsp hover over the cursor" global user k ":lsp-hover<ret>"
 
     map -docstring "open fzf" global user f ": fzf-mode<ret>"
+
+    # manual completion
+    hook global WinSetOption %{
+        set-option global autocomplete prompt
+    }
   '';
 }
