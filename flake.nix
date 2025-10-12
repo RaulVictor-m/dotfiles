@@ -39,6 +39,7 @@
         ./home-manager/configs/wm.nix
 
         ./home-manager/configs/kak.nix
+        ./home-manager/configs/fish/fish.nix
         ./home-manager/configs/editorconfig.nix
         ./home-manager/configs/qutebrowser.nix
         ./home-manager/configs/alacritty.nix
