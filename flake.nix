@@ -3,18 +3,19 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager,nixpkgs-unstable, ... }:
   let
     system = "x86_64-linux";
     user = "raul";
-  in {
-    nixosConfigurations.host = nixpkgs.lib.nixosSystem {
-      pkgs = import nixpkgs { inherit system; };
-      modules = [
+    pkgs = import nixpkgs { inherit system; };
+    pkgs-unstable = import nixpkgs-unstable { inherit system; };
+
+    defaultSysModules = [
         ./host/configuration.nix
         ./host/audio.nix
         ./host/locale.nix
@@ -24,15 +25,29 @@
         ./host/xsession.nix
         ./host/shell.nix
       ];
+  in {
+    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+      inherit pkgs;
+      modules = defaultSysModules ++ [];
 
       specialArgs = {
-          inherit user;
+          inherit user pkgs-unstable;
+      };
+
+    };
+
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      inherit pkgs;
+      modules = defaultSysModules ++ [ ./host/laptop.nix ];
+
+      specialArgs = {
+          inherit user pkgs-unstable;
       };
 
     };
 
     homeConfigurations."${user}" = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs { inherit system; };
+      inherit pkgs;
       modules = [
         ./home-manager/home.nix
         ./home-manager/configs/devTools.nix

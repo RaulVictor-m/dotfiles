@@ -1,4 +1,4 @@
-{ config, lib, pkgs, user, ... }:
+{ config, lib, pkgs, user, pkgs-unstable, ... }:
 
 {
   users.users."${user}" = {
@@ -44,6 +44,8 @@
     gnumake
     gdb
     gf
+    pkgs-unstable.zig
+    pkgs-unstable.nim
 
     unzip
     gnutar

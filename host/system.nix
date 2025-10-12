@@ -4,5 +4,6 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
 
-  services.libinput.enable = true;
+  zramSwap.enable = true;
+  zramSwap.memoryPercent = 25;
 }
