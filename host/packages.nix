@@ -34,6 +34,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    linux-firmware
+
     kakoune
     curl
     git
