@@ -27,7 +27,25 @@
   in {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       inherit pkgs;
-      modules = defaultSysModules ++ [./host/audio.nix];
+      modules = defaultSysModules ++ [
+        ./host/audio.nix
+        ./host/desktop-system.nix
+        ./host/desktop-hardware.nix
+        ];
+
+      specialArgs = {
+          inherit user pkgs-unstable;
+      };
+
+    };
+
+    nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
+      inherit pkgs;
+      modules = defaultSysModules ++ [
+        ./host/audio.nix
+        ./host/vm-system.nix
+        ./host/vm-hardware.nix
+      ];
 
       specialArgs = {
           inherit user pkgs-unstable;
@@ -37,7 +55,11 @@
 
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       inherit pkgs;
-      modules = defaultSysModules ++ [ ./host/laptop.nix ];
+      modules = defaultSysModules ++ [
+        ./host/laptop.nix
+        ./host/laptop-system.nix
+        ./host/laptop-hardware.nix
+      ];
 
       specialArgs = {
           inherit user pkgs-unstable;
