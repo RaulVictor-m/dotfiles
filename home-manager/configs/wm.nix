@@ -5,6 +5,7 @@ let
 in
 {
   home.file.".xinitrc".text = ''
+    feh --gb-scale ~/dotfile/home-manager/configs/wallpaper.jpg &
     exec dwm
   '';
 
