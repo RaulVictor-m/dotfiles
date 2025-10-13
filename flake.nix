@@ -17,7 +17,6 @@
 
     defaultSysModules = [
         ./host/configuration.nix
-        ./host/audio.nix
         ./host/locale.nix
         ./host/networking.nix
         ./host/packages.nix
@@ -28,7 +27,7 @@
   in {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       inherit pkgs;
-      modules = defaultSysModules ++ [];
+      modules = defaultSysModules ++ [./host/audio.nix];
 
       specialArgs = {
           inherit user pkgs-unstable;
