@@ -3,7 +3,7 @@
 {
   users.users."${user}" = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" ]; 
     initialPassword = "__nixos__";
     packages = with pkgs; [
       dmenu
