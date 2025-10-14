@@ -18,11 +18,11 @@
     "elevator=deadline"
     "mitigations=off"
 
-    "acpi_osi=!"
+    # "acpi_osi=!"
     "rootdelay=10"
     "intel_idle.max_cstate=1"
-    "i915.enable_psr=0"
-    "i915.force_probe=*"
+    # "i915.enable_psr=0"
+    # "i915.force_probe=*"
   ];
 
   boot.kernel.sysctl = {
