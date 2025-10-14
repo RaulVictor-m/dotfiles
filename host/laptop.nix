@@ -1,27 +1,13 @@
 { config, lib, pkgs, ... }:
 
 {
-  zramSwap.algorithm = "lzo";
+  services.pipewire.enable = false;
+  services.pulseaudio.enable = false;
+  services.sshd.enable = false;
 
-  swapDevices = [
-    {
-      device = "/var/swapfile";
-      size = 4096;
-    }
+  environment.systemPackages = with pkgs; [
+    acpi
   ];
-
-  boot.kernelParams = [
-    "nowatchdog"
-    "elevator=deadline"
-    "mitigations=off"
-  ];
-
-  boot.kernel.sysctl = {
-      "vm.swappiness" = 15;
-      "vm.vfs_cache_pressure" = 50;
-  };
-
-  boot.blacklistedKernelModules = [ "bluetooth" "btusb" ]; # if unused
 
   services.libinput.enable = true;
   services.tlp.enable = true;
