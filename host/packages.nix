@@ -63,6 +63,7 @@
     inxi
     feh
     xclip
+    fzf
 
     # utils
     coreutils
