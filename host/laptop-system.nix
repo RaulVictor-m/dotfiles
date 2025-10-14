@@ -14,15 +14,17 @@
   ];
 
   boot.kernelParams = [
+    # "i915.enable_psr=0"
+    # "i915.force_probe=*"
+    # "acpi_osi=!"
+
     "nowatchdog"
     "elevator=deadline"
     "mitigations=off"
 
-    # "acpi_osi=!"
     "rootdelay=10"
-    "intel_idle.max_cstate=1"
-    # "i915.enable_psr=0"
-    # "i915.force_probe=*"
+
+    "intel_idle.max_cstate=1" # fixes cpu deep sleep bug, that freezes kernel
   ];
 
   boot.kernel.sysctl = {
