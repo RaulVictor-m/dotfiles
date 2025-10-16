@@ -6,6 +6,9 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    zsh-helix-mode.url = "github:multirious/zsh-helix-mode/main";
+    zsh-helix-mode.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager,nixpkgs-unstable, ... }:
@@ -82,6 +85,7 @@
 
         ./home-manager/configs/kak.nix
         ./home-manager/configs/fish/fish.nix
+        ./home-manager/configs/zsh.nix
         ./home-manager/configs/editorconfig.nix
         ./home-manager/configs/qutebrowser.nix
         ./home-manager/configs/alacritty.nix

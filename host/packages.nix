@@ -58,6 +58,7 @@
     alacritty
     zathura
     fish
+    zsh
 
     fastfetch
     inxi
@@ -66,6 +67,7 @@
     fzf
 
     # utils
+    brightnessctl
     coreutils
     pkg-config
     clang
