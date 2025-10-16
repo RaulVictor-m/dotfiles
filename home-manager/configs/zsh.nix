@@ -6,7 +6,7 @@
     plugins = [
       {
         name = "zsh-helix-mode";
-        name = pkgs.zsh-helix-mode;
+        src  = pkgs.zsh-helix-mode;
         file = "share/zsh-helix-mode/zsh-helix-mode.plugin.zsh";
       }
     ];
