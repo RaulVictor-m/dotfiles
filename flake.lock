@@ -58,10 +58,10 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "zsh-helix-mode": "zsh-helix-mode"
+        "zsh-hlx": "zsh-hlx"
       }
     },
-    "zsh-helix-mode": {
+    "zsh-hlx": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"

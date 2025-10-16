@@ -7,22 +7,19 @@
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    zsh-helix-mode.url = "github:multirious/zsh-helix-mode/main";
-    zsh-helix-mode.inputs.nixpkgs.follows = "nixpkgs";
+    zsh-hlx.url = "github:multirious/zsh-helix-mode/main";
+    zsh-hlx.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager,nixpkgs-unstable, ... }:
+  outputs = { self, nixpkgs, home-manager,nixpkgs-unstable, zsh-hlx, ... }:
   let
     system = "x86_64-linux";
     user = "raul";
     pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
+      inherit system; config.allowUnfree = true;
+      overlays = [zsh-hlx.overlays.default];
     };
-    pkgs-unstable = import nixpkgs-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
+    pkgs-unstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
 
     defaultSysModules = [
         ./host/configuration.nix

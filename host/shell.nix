@@ -1,6 +1,8 @@
 { config, lib, pkgs, user, ... }:
 
 {
+  environment.pathsToLink = [ "/share/zsh" ];
+
   nix.registry.sys = {
     to = {
       type = "path";
@@ -9,8 +11,8 @@
     exact = false;
   };
 
-  users.defaultUserShell = pkgs.fish;
-  programs.fish.enable = true;
-  users.users."${user}".shell = pkgs.fish;
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+  users.users."${user}".shell = pkgs.zsh;
 }
 
