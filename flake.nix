@@ -93,5 +93,6 @@
       };
 
     };
+    packages.${system} = { stable = pkgs; unstable = pkgs-unstable;};
   };
 }
