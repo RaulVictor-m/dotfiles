@@ -24,6 +24,7 @@
       ZSH_AUTOSUGGEST_ACCEPT_WIDGETS+=(
         zhm_move_right
         zhm_clear_selection_move_right
+        zhm_goto_line_end
       )
       ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(
         zhm_move_next_word_start
