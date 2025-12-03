@@ -21,58 +21,10 @@
     };
     pkgs-unstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
 
-    defaultSysModules = [
-        ./host/commum/configuration.nix
-        ./host/commum/locale.nix
-        ./host/commum/networking.nix
-        ./host/commum/packages.nix
-        ./host/commum/system.nix
-        ./host/commum/xsession.nix
-        ./host/commum/shell.nix
-      ];
+    hosts = import ./host/hosts.nix {inherit pkgs pkgs-unstable user nixpkgs;};
+
   in {
-    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-      inherit pkgs;
-      modules = defaultSysModules ++ [
-        ./host/commum/audio.nix
-        ./host/desktop/configuration.nix
-        ./host/desktop/system.nix
-        ./host/desktop/hardware.nix
-        ];
-
-      specialArgs = {
-          inherit user pkgs-unstable;
-      };
-
-    };
-
-    nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
-      inherit pkgs;
-      modules = defaultSysModules ++ [
-        ./host/commum/audio.nix
-        ./host/vm/system.nix
-        ./host/vm/hardware.nix
-      ];
-
-      specialArgs = {
-          inherit user pkgs-unstable;
-      };
-
-    };
-
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      inherit pkgs;
-      modules = defaultSysModules ++ [
-        ./host/laptop/configuration.nix
-        ./host/laptop/system.nix
-        ./host/laptop/hardware.nix
-      ];
-
-      specialArgs = {
-          inherit user pkgs-unstable;
-      };
-
-    };
+    nixosConfigurations = hosts;
 
     homeConfigurations."${user}" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
