@@ -35,6 +35,7 @@
       inherit pkgs;
       modules = defaultSysModules ++ [
         ./host/commum/audio.nix
+        ./host/desktop/configuration.nix
         ./host/desktop/system.nix
         ./host/desktop/hardware.nix
         ];
