@@ -22,21 +22,21 @@
     pkgs-unstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
 
     defaultSysModules = [
-        ./host/configuration.nix
-        ./host/locale.nix
-        ./host/networking.nix
-        ./host/packages.nix
-        ./host/system.nix
-        ./host/xsession.nix
-        ./host/shell.nix
+        ./host/commum/configuration.nix
+        ./host/commum/locale.nix
+        ./host/commum/networking.nix
+        ./host/commum/packages.nix
+        ./host/commum/system.nix
+        ./host/commum/xsession.nix
+        ./host/commum/shell.nix
       ];
   in {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       inherit pkgs;
       modules = defaultSysModules ++ [
-        ./host/audio.nix
-        ./host/desktop-system.nix
-        ./host/desktop-hardware.nix
+        ./host/commum/audio.nix
+        ./host/desktop/system.nix
+        ./host/desktop/hardware.nix
         ];
 
       specialArgs = {
@@ -48,9 +48,9 @@
     nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
       inherit pkgs;
       modules = defaultSysModules ++ [
-        ./host/audio.nix
-        ./host/vm-system.nix
-        ./host/vm-hardware.nix
+        ./host/commum/audio.nix
+        ./host/vm/system.nix
+        ./host/vm/hardware.nix
       ];
 
       specialArgs = {
@@ -62,9 +62,9 @@
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       inherit pkgs;
       modules = defaultSysModules ++ [
-        ./host/laptop.nix
-        ./host/laptop-system.nix
-        ./host/laptop-hardware.nix
+        ./host/laptop/configuration.nix
+        ./host/laptop/system.nix
+        ./host/laptop/hardware.nix
       ];
 
       specialArgs = {
