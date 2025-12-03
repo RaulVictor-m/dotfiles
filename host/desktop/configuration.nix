@@ -9,6 +9,10 @@
   # services.blueman-applet.enable = true;
 
   environment.systemPackages = with pkgs; [
+    parsec-bin
+    kitty
+    discord
+
     steam
 
     bluez
