@@ -9,6 +9,8 @@
   # services.blueman-applet.enable = true;
 
   environment.systemPackages = with pkgs; [
+    steam
+
     bluez
     blueman
   ];
