@@ -6,7 +6,7 @@
   nix.registry.sys = {
     to = {
       type = "path";
-      path = ../.;
+      path = "/home/${user}/dotfiles";
     };
     exact = false;
   };
