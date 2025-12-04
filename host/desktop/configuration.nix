@@ -8,16 +8,6 @@
     enable = true;
     package = pkgs.bluez;
     powerOnBoot = true;
-    settings = {
-      General = {
-        Experimental = true;
-        FastConnectable = true;
-        ControllerMode = "dual";
-      };
-      Policy = {
-        AutoEnable = true;
-      };
-    };
   };
 
   services.blueman.enable = true;
@@ -32,5 +22,7 @@
 
     bluez
     bluetuith
+
+    libappindicator-gtk3
   ];
 }
