@@ -5,6 +5,7 @@
 
   #bluetooth
   hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   #packages
   environment.systemPackages = with pkgs; [
