@@ -64,6 +64,8 @@
     inxi
     feh
     xclip
+    xdo
+    xdotool
     fzf
 
     # utils
