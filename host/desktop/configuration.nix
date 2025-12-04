@@ -5,10 +5,8 @@
 
   #bluetooth
   hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-  # services.blueman-applet.enable = true;
-  services.dbus.packages = with pkgs; [ blueman ];
 
+  #packages
   environment.systemPackages = with pkgs; [
     parsec-bin
     kitty
@@ -17,6 +15,6 @@
     steam
 
     bluez
-    blueman
+    bluetuith
   ];
 }

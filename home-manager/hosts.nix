@@ -28,8 +28,6 @@
       ./configs/devTools.nix
       ./configs/wm.nix
 
-      # ./configs/bluetooth.nix
-
       ./configs/kak.nix
       ./configs/fish/fish.nix
       ./configs/zsh.nix
