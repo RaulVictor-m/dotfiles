@@ -6,6 +6,7 @@
     modules = [
       ./home.nix
       ./configs/devTools.nix
+      ./configs/tmux.nix
       ./configs/wm.nix
 
       ./configs/kak.nix
@@ -26,6 +27,7 @@
     modules = [
       ./home.nix
       ./configs/devTools.nix
+      ./configs/tmux.nix
       ./configs/wm.nix
 
       ./configs/kak.nix
