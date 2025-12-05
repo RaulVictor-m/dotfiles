@@ -13,7 +13,7 @@
       ./configs/zsh.nix
       ./configs/editorconfig.nix
       ./configs/qutebrowser.nix
-      ./configs/alacritty.nix
+      ./configs/alacritty/alacritty.nix
     ];
 
     extraSpecialArgs = {
@@ -33,7 +33,7 @@
       ./configs/zsh.nix
       ./configs/editorconfig.nix
       ./configs/qutebrowser.nix
-      ./configs/alacritty.nix
+      ./configs/alacritty/alacritty-desktop.nix
     ];
 
 
