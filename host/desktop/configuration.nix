@@ -19,11 +19,14 @@
   #bluetooth
   hardware.bluetooth = {
     enable = true;
-    package = pkgs.bluez;
+    package = pkgs.bluez-experimental;
     powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+      };
+    };
   };
-
-  services.blueman.enable = true;
 
   #graphics
   hardware.graphics.enable = true;
@@ -45,6 +48,9 @@
     steam
 
     bluez
+    bluez-experimental
+    bluez-headers
+
     bluetuith
 
     libappindicator-gtk3
