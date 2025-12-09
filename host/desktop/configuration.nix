@@ -26,8 +26,8 @@
   services.blueman.enable = true;
 
   #graphics
-  hardware.opengl.enable = true;
-  hardware.opengl.extraPackages = with pkgs; [
+  hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = with pkgs; [
     vaapiIntel
     vaapiVdpau
     libvdpau-va-gl
