@@ -33,7 +33,7 @@
     libvdpau-va-gl
     intel-media-driver
     intel-vaapi-driver
-    mesa.drivers
+    mesa
   ];
 
   #packages
