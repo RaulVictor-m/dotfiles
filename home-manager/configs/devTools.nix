@@ -3,18 +3,22 @@
 {
   programs.git = {
     enable = true;
-    userName = "RaulVictor-m";
-    userEmail = "raulvictor822@gmail.com";
 
-    extraConfig = {
+    settings = {
+      user = {
+        userName = "RaulVictor-m";
+        userEmail = "raulvictor822@gmail.com";
+      };
+
+      aliases = {
+        lg = "log --oneline --graph --decorate";
+      };
+
       core.editor = "kak";
       init.defaultBranch = "main";
       color.ui = "auto";
     };
 
-    aliases = {
-      lg = "log --oneline --graph --decorate";
-    };
   };
 
 }
