@@ -25,11 +25,23 @@
 
   services.blueman.enable = true;
 
+  #graphics
+  hardware.opengl.enable = true;
+  hardware.opengl.extraPackages = with pkgs; [
+    vaapiIntel
+    vaapiVdpau
+    libvdpau-va-gl
+    intel-media-driver
+    intel-vaapi-driver
+    mesa.drivers
+  ];
+
   #packages
   environment.systemPackages = with pkgs; [
     parsec-bin
     kitty
     discord
+    obs-studio
 
     steam
 
@@ -37,5 +49,7 @@
     bluetuith
 
     libappindicator-gtk3
+    ffmpeg-full
   ];
+
 }

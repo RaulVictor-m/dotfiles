@@ -49,24 +49,21 @@
     pkgs-unstable.zig
     pkgs-unstable.nim
 
-    unzip
-    gnutar
 
     qutebrowser
     brave
     chromium
     alacritty
     zathura
+    mpv
     fish
     zsh
 
     fastfetch
-    inxi
     feh
     xclip
     xdo
     xdotool
-    fzf
 
     # utils
     brightnessctl
@@ -79,5 +76,15 @@
     file
     openssh
     dust
+    fzf
+    btop
+    htop
+    inxi
+    tldr
+
+    zip
+    unzip
+    gnutar
+    p7zip
   ];
 }
