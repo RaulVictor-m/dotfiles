@@ -31,7 +31,9 @@
         zhm_move_next_word_end
       )
 
+      ZSH_AUTOSUGGEST_STRATEGY=(history completion)
       setopt prompt_subst
+
       PROMPT=$'%F{130}%~%f %F{14}%f%F{128}%F{197}> %f'
 
       # PROMPT=$'\n%F{130}%~%f %F{14}$(git branch 2>/dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/")%f\n\n%F{128}--%F{197}>%f'

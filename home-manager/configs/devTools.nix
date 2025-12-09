@@ -6,11 +6,11 @@
 
     settings = {
       user = {
-        userName = "RaulVictor-m";
-        userEmail = "raulvictor822@gmail.com";
+        name = "RaulVictor-m";
+        email = "raulvictor822@gmail.com";
       };
 
-      aliases = {
+      alias = {
         lg = "log --oneline --graph --decorate";
       };
 
