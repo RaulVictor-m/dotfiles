@@ -1,10 +1,12 @@
-{pkgs, user, home-manager}:
+{pkgs, user, home-manager, stylix}:
 
 {
   "${user}" = home-manager.lib.homeManagerConfiguration {
     inherit pkgs;
     modules = [
+      stylix.homeModules.stylix
       ./home.nix
+      ./configs/stylix.nix
       ./configs/devTools.nix
       ./configs/tmux.nix
       ./configs/wm.nix
@@ -25,7 +27,9 @@
   "${user}-desktop" = home-manager.lib.homeManagerConfiguration {
     inherit pkgs;
     modules = [
+      stylix.homeModules.stylix
       ./home.nix
+      ./configs/stylix.nix
       ./configs/devTools.nix
       ./configs/tmux.nix
       ./configs/wm.nix

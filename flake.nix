@@ -8,11 +8,14 @@
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    stylix.url = "github:nix-community/stylix/release-25.11";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
+
     zsh-hlx.url = "github:multirious/zsh-helix-mode/main";
     zsh-hlx.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager,nixpkgs-unstable, zsh-hlx, ... }:
+  outputs = { self, nixpkgs, home-manager,nixpkgs-unstable, zsh-hlx, stylix, ... }:
   let
     system = "x86_64-linux";
     user = "raul";
@@ -24,7 +27,7 @@
     pkgs-unstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
 
     hosts-nixos = import ./host/hosts.nix {inherit pkgs pkgs-unstable user nixpkgs;};
-    hosts-hm = import ./home-manager/hosts.nix {inherit pkgs user home-manager;};
+    hosts-hm = import ./home-manager/hosts.nix {inherit pkgs user home-manager stylix;};
 
   in {
 
