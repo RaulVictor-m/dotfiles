@@ -11,7 +11,8 @@
 
     escapeTime = 10;
     extraConfig = ''
-      set -g default-terminal "screen-256color"
+      # set -g default-terminal "xterm-256color"
+      set -ag terminal-overrides ",xterm-256color:RGB"
       set -sg repeat-time 600
     '';
   };
