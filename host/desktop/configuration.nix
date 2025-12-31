@@ -2,6 +2,7 @@
 
 {
   programs.steam.enable = true;
+  networking.interfaces.enp5s0.wakeOnLan.enable = true;
 
   # tailscale
   services.tailscale.enable = true;
