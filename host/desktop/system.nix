@@ -28,6 +28,10 @@
     }
   ];
 
+  boot.kernelParams = [
+    "nomodeset"
+  ];
+
   boot.kernel.sysctl = {
       "vm.swappiness" = 15;
       # "vm.vfs_cache_pressure" = 50;
