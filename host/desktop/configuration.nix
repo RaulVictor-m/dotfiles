@@ -55,6 +55,7 @@
 
     libappindicator-gtk3
     ffmpeg-full
+    ntfs3g
   ];
 
 }
