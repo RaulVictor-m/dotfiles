@@ -34,7 +34,7 @@
   ];
 
   boot.kernelParams = [
-    "video=card1-HDMI-A-1:1920x1080@60D"
+    "video=card1-HDMI-A-1:1920x1080@60R"
   ];
 
   boot.kernel.sysctl = {
