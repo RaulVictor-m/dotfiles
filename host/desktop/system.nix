@@ -26,7 +26,6 @@
     }
   '';
 
-
   swapDevices = [
     {
       device = "/var/swapfile";
@@ -34,7 +33,6 @@
     }
   ];
 
-  boot.initrd.kernelModules =  [ "amdgpu" ];
   boot.kernelParams = [
     "video=card1-HDMI-A-1:1920x1080@60"
   ];
