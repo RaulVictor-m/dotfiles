@@ -8,6 +8,12 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
   boot.loader.grub.useOSProber = true;
+  boot.loader.grub.extraConfig = ''
+    set gfxmode=1920x1080
+    set gfxpayload=keep
+    terminal_output gfxterm
+  '';
+
   boot.loader.grub.extraEntries = ''
     menuentry "Reboot" {
       reboot
@@ -28,8 +34,9 @@
     }
   ];
 
+  boot.initrd.kernelModules =  [ "amdgpu" ];
   boot.kernelParams = [
-    "nomodeset"
+    "video=card1-HDMI-A-1:1920x1080@60"
   ];
 
   boot.kernel.sysctl = {
