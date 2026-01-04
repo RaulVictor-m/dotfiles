@@ -1,7 +1,10 @@
-{pkgs, ... }:
+{pkgs, pkgs-unstable, ... }:
 
 {
   home.packages = with pkgs; [
+    pkgs-unstable.zls
+    pkgs-unstable.nimlsp
+    llvmPackages_20.clang-tools
     kakoune-lsp
   ];
 
@@ -14,6 +17,6 @@
     lsp-enable
 
     lsp-inline-diagnostics-disable global
-    lsp-diagnostics-lines-disable global
+    lsp-diagnostic-lines-disable global
   '';
 }
