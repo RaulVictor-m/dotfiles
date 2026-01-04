@@ -2,13 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    kakoune-lsp
     kakounePlugins.fzf-kak
   ];
 
   programs.kakoune.plugins = with pkgs; [
     kakounePlugins.kak-fzf
-    kakounePlugins.kakoune-lsp
   ];
 
   home.sessionVariables = {
@@ -16,7 +14,6 @@
   };
   programs.kakoune.enable = true;
   programs.kakoune.defaultEditor = true;
-
 
   programs.kakoune.config = {
     colorScheme = "my-gruvbox-dark";
@@ -35,7 +32,6 @@
   programs.kakoune.extraConfig = ''
     add-highlighter global/ show-whitespaces -spc '•' -indent '•'
     add-highlighter global/ number-lines -relative -hlcursor -min-digits 3 -separator " " -cursor-separator "▏"
-
 
     map -docstring "comment selected lines" global user c ":comment-line<ret>"
     map -docstring "yank to the system clipboard" global user y '<a-|>xclip -i -selection clipboard <ret>'

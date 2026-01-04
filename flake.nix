@@ -27,7 +27,7 @@
     pkgs-unstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
 
     hosts-nixos = import ./host/hosts.nix {inherit pkgs pkgs-unstable user nixpkgs;};
-    hosts-hm = import ./home-manager/hosts.nix {inherit pkgs user home-manager stylix;};
+    hosts-hm = import ./home-manager/hosts.nix {inherit pkgs pkgs-unstable user home-manager stylix;};
 
   in {
 

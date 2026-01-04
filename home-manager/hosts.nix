@@ -1,4 +1,4 @@
-{pkgs, user, home-manager, stylix}:
+{pkgs, pkgs-unstable, user, home-manager, stylix}:
 
 {
   "${user}" = home-manager.lib.homeManagerConfiguration {
@@ -11,7 +11,7 @@
       ./configs/tmux.nix
       ./configs/wm.nix
 
-      ./configs/kak.nix
+      ./configs/kak/kak.nix
       ./configs/fish/fish.nix
       ./configs/zsh.nix
       ./configs/editorconfig.nix
@@ -34,7 +34,8 @@
       ./configs/tmux.nix
       ./configs/wm.nix
 
-      ./configs/kak.nix
+      ./configs/kak/kak.nix
+      ./configs/kak/lsp.nix
       ./configs/fish/fish.nix
       ./configs/zsh.nix
       ./configs/editorconfig.nix
@@ -44,7 +45,7 @@
 
 
     extraSpecialArgs = {
-        inherit user;
+        inherit user pkgs-unstable;
     };
   };
 }
