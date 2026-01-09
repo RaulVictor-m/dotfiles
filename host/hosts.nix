@@ -15,7 +15,10 @@ in {
     inherit pkgs;
     modules = defaultSysModules ++ [
       ./commum/audio.nix
+      ./commum/bluetooth.nix
+      ./commum/graphics.nix
       ./desktop/configuration.nix
+      ./desktop/packages.nix
       ./desktop/system.nix
       ./desktop/hardware.nix
       ];
