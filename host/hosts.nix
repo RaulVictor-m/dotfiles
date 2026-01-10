@@ -1,4 +1,4 @@
-{nixpkgs, user, pkgs, pkgs-unstable}:
+{nixpkgs, user, pkgs, pkgs-unstable, mango}:
 let
   defaultSysModules = [
     ./commum/configuration.nix
@@ -14,6 +14,7 @@ in {
   desktop = nixpkgs.lib.nixosSystem {
     inherit pkgs;
     modules = defaultSysModules ++ [
+      mango.nixosModules.mango
       ./commum/audio.nix
       ./commum/bluetooth.nix
       ./commum/graphics.nix
@@ -21,7 +22,7 @@ in {
       ./desktop/packages.nix
       ./desktop/system.nix
       ./desktop/hardware.nix
-      ];
+    ];
 
     specialArgs = {
         inherit user pkgs-unstable;

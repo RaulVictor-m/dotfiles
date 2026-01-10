@@ -13,9 +13,12 @@
 
     zsh-hlx.url = "github:multirious/zsh-helix-mode/main";
     zsh-hlx.inputs.nixpkgs.follows = "nixpkgs";
+
+    mango.url = "github:DreamMaoMao/mango";
+    mango.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager,nixpkgs-unstable, zsh-hlx, stylix, ... }:
+  outputs = { self, nixpkgs, home-manager,nixpkgs-unstable, zsh-hlx, stylix, mango, ... }:
   let
     system = "x86_64-linux";
     user = "raul";
@@ -26,7 +29,7 @@
     };
     pkgs-unstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
 
-    hosts-nixos = import ./host/hosts.nix {inherit pkgs pkgs-unstable user nixpkgs;};
+    hosts-nixos = import ./host/hosts.nix {inherit pkgs pkgs-unstable user nixpkgs mango;};
     hosts-hm = import ./home-manager/hosts.nix {inherit pkgs pkgs-unstable user home-manager stylix;};
 
   in {
