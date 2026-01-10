@@ -3,6 +3,7 @@
 {
   programs.steam.enable = true;
   programs.mango.enable = true;
+  programs.sway.enable = true;
   environment.systemPackages = with pkgs; [
     parsec-bin
     kitty
