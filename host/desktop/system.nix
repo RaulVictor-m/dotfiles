@@ -37,6 +37,7 @@
     "video=HDMI-A-1:1920x1080@60"
     "amdgpu.dc=1"
     "amdgpu.freesync_video=1"
+    "consoleblank=300"
   ];
 
   boot.kernel.sysctl = {
