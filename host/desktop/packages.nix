@@ -17,5 +17,6 @@
     wl-clipboard
     swaybg
     swaylock
+    wmenu
   ];
 }
