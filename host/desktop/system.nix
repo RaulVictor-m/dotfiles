@@ -34,7 +34,9 @@
   ];
 
   boot.kernelParams = [
-    "video=card1-HDMI-A-1:1920x1080@60R"
+    "video=HDMI-A-1:1920x1080@60"
+    "amdgpu.dc=1"
+    "amdgpu.freesync_video=1"
   ];
 
   boot.kernel.sysctl = {
