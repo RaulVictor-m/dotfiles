@@ -19,5 +19,7 @@
     swaylock
     wmenu
     waybar
+    swayidle
+    wlr-randr
   ];
 }
