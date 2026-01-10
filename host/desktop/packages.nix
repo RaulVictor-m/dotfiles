@@ -18,5 +18,6 @@
     swaybg
     swaylock
     wmenu
+    waybar
   ];
 }

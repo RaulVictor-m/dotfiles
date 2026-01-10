@@ -81,6 +81,7 @@
     htop
     inxi
     tldr
+    killall
 
     zip
     unzip
