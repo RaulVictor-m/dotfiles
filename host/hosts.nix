@@ -18,6 +18,8 @@ in {
       ./commum/audio.nix
       ./commum/bluetooth.nix
       ./commum/graphics.nix
+      ./commum/displayManager.nix
+      ./commum/wayland.nix
       ./desktop/configuration.nix
       ./desktop/packages.nix
       ./desktop/system.nix
