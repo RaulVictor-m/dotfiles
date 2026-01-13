@@ -33,6 +33,8 @@
       ./configs/devTools.nix
       ./configs/tmux.nix
       ./configs/wm.nix
+      ./configs/mango/mango.nix
+      ./configs/mango/waybar.nix
 
       ./configs/kak/kak.nix
       ./configs/kak/lsp.nix
