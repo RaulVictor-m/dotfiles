@@ -3,13 +3,13 @@
 {
   home.file.".config/mango/config.conf".text = ''
     # AUTOSTART
-        exec-once=swayidle -w timeout 300 "wlr-randr --output HDMI-A-1 --off" resume "wlr-randr --output HDMI-A-1 --on" timeout 900 "systemctl suspend"
+        exec-once=hypridle
         exec-once=waybar
         exec-once=swaybg -i ~/dotfiles/home-manager/configs/wallpaper.jpg
 
     # CONFIG
         drag_tile_to_tile          = 1
-        idleinhibit_ignore_visible = 0
+        idleinhibit_ignore_visible = 1
         monitorrule                = HDMI-A-1,0.8,1,scroller,0,1,0,0,1920,1080,60
         adaptive_sync              = 1
         syncobj_enable             = 1
@@ -117,4 +117,18 @@
         mousebind=SUPER,btn_left,moveresize,curmove
         mousebind=SUPER,btn_right,moveresize,curresize
   '';
+
+  home.file.".config/hypr/hypridle.conf".text = ''
+    listener {
+      timeout = 300
+      on-timeout = wlr-randr --output HDMI-A-1 --off
+      on-resume = wlr-randr --output HDMI-A-1 --on
+    }
+
+    listener {
+      timeout = 900
+      on-timeout = systemctl suspend
+    }
+  '';
+
 }

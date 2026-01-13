@@ -15,7 +15,7 @@
     swaybg
     swaylock
     wmenu
-    swayidle
+    hypridle
     wlr-randr
   ];
 }
