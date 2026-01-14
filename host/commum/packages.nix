@@ -87,5 +87,8 @@
     unzip
     gnutar
     p7zip
+
+    # custom pkgs
+    (import ./packages/clipboard.nix {inherit pkgs;})
   ];
 }
