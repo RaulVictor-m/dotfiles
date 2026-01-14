@@ -48,6 +48,10 @@
         bind=SUPER+SHIFT,c,quit
         bind=SUPER+SHIFT,r,reload_config
 
+        bind=SUPER+ALT,i,minimized
+        bind=SUPER+ALT+SHIFT,i,restore_minimized
+        bind=SUPER,z,toggle_scratchpad
+
     # BIND: RESIZE
         bind=SUPER,h,resizewin,-50,0
         bind=SUPER,l,resizewin,+50,0
