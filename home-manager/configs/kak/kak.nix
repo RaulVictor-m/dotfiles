@@ -34,8 +34,8 @@
     add-highlighter global/ number-lines -relative -hlcursor -min-digits 3 -separator " " -cursor-separator "▏"
 
     map -docstring "comment selected lines" global user c ":comment-line<ret>"
-    map -docstring "yank to the system clipboard" global user y '<a-|>xclip -i -selection clipboard <ret>'
-    map -docstring "paste from the system clipboard" global user p '<a-!>xclip -o -selection clipboard <ret>'
+    map -docstring "yank to the system clipboard" global user y '<a-|>xwl_clip copy <ret>'
+    map -docstring "paste from the system clipboard" global user p '<a-!>xwl_clip paste <ret>'
 
     map -docstring "enter in lsp mode " global user l ":enter-user-mode lsp<ret>"
     map -docstring "lsp hover over the cursor" global user k ":lsp-hover<ret>"
