@@ -8,7 +8,6 @@
         exec-once=swaybg -i ~/dotfiles/home-manager/configs/wallpaper.jpg
 
     # CONFIG
-        drag_tile_to_tile          = 1
         idleinhibit_ignore_visible = 1
         monitorrule                = HDMI-A-1,0.8,1,scroller,0,1,0,0,1920,1080,60
         adaptive_sync              = 1
@@ -28,6 +27,10 @@
     # VISUAL
         gappov = 35
         gappoh = 35
+
+    # LAYOUT: FLOATING
+        drag_tile_to_tile          = 1
+        enable_floating_snap       = 0
 
     # LAYOUT: SCROLLER
         scroller_structs                   = 35
