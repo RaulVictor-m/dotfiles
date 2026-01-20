@@ -1,6 +1,11 @@
 {pkgs, home-manager, ...}:
 
 {
+  home.sessionVariables = {
+    vblank_mode = "1";
+    __GL_SYNC_TO_VBLANK = "1";
+  };
+
   home.file.".config/mango/config.conf".text = ''
     # AUTOSTART
         exec-once=hypridle
@@ -10,9 +15,9 @@
     # CONFIG
         idleinhibit_ignore_visible = 1
         monitorrule                = HDMI-A-1,0.8,1,scroller,0,1,0,0,1920,1080,60
-        adaptive_sync              = 1
-        syncobj_enable             = 1
-        allow_tearing              = 0
+        adaptive_sync              = 0
+        syncobj_enable             = 0
+        allow_tearing              = 1
         animations                 = 1
         layer_animations           = 1
         animation_fade_in          = 0
@@ -23,6 +28,8 @@
         animation_duration_tag     = 200
         animation_duration_close   = 200
         animation_duration_focus   = 200
+
+        layerrule=noanim:1,layer_name:waybar
 
     # VISUAL
         gappov = 35
