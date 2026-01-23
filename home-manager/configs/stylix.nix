@@ -11,7 +11,6 @@
 
   stylix.autoEnable = true;
   stylix.targets.gtk.enable = true;
-  stylix.targets.kitty.enable = true;
   stylix.targets.qutebrowser.enable = false;
 
   stylix.cursor = {
@@ -34,4 +33,7 @@
     };
   };
 
+  # packages to force apply style
+  programs.foot.enable = true;
+  stylix.targets.foot.enable = true;
 }

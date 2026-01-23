@@ -17,6 +17,7 @@
       qutebrowser
       brave
       alacritty
+      foot
       zathura
       feh
       fish
@@ -54,6 +55,7 @@
     brave
     chromium
     alacritty
+    foot
     zathura
     mpv
     fish
