@@ -49,7 +49,8 @@
     gf
     pkgs-unstable.zig
     pkgs-unstable.nim
-
+    go
+    gopls
 
     qutebrowser
     brave
