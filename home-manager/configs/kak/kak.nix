@@ -47,6 +47,17 @@
     set-option global autocomplete prompt
     hook global BufOpenFile [^*]* editorconfig-load
     hook global BufNewFile [^*]* editorconfig-load
+
+    require-module make
+    define-command -params .. -docstring %{
+        your shell comand for compilation with make style errors
+    } compile %{
+        evaluate-commands %{
+            make -E %sh{
+                echo -e "default:\n	$@\n"
+            }
+        }
+    }
   '';
 
   home.file.".config/kak/colors/my-gruvbox-dark.kak".text = ''
