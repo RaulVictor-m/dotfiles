@@ -6,6 +6,13 @@
     __GL_SYNC_TO_VBLANK = "1";
   };
 
+  systemd.user.sessionVariables = {
+    WAYLAND_DISPLAY = "wayland-0";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_CURRENT_DESKTOP = "mango";
+    XDG_SESSION_DESKTOP = "wlroots";
+  };
+
   home.file.".config/mango/config.conf".text = ''
     # AUTOSTART
         exec-once=hypridle
@@ -15,7 +22,6 @@
     # CONFIG
         idleinhibit_ignore_visible = 1
         monitorrule                = HDMI-A-1,0.8,1,scroller,0,1,0,0,1920,1080,60
-        adaptive_sync              = 0
         syncobj_enable             = 0
         allow_tearing              = 1
         animations                 = 1
