@@ -12,6 +12,7 @@
       ./configs/wm.nix
 
       ./configs/kak/kak.nix
+      ./configs/kak/lsp.nix
       ./configs/fish/fish.nix
       ./configs/zsh.nix
       ./configs/editorconfig.nix
@@ -20,7 +21,7 @@
     ];
 
     extraSpecialArgs = {
-        inherit user;
+        inherit user pkgs-unstable;
     };
   };
 

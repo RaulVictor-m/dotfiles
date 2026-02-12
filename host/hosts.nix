@@ -8,6 +8,8 @@ let
     ./commum/system.nix
     ./commum/xsession.nix
     ./commum/shell.nix
+
+    ./commum/graphics.nix
   ];
 
 in {
@@ -17,7 +19,6 @@ in {
       mango.nixosModules.mango
       ./commum/audio.nix
       ./commum/bluetooth.nix
-      ./commum/graphics.nix
       ./commum/displayManager.nix
       ./commum/wayland.nix
       ./desktop/configuration.nix
