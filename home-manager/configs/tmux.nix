@@ -6,15 +6,20 @@
     keyMode = "vi";
     prefix = "C-Space";
     baseIndex = 1;
-    historyLimit = 5000;
 
     escapeTime = 10;
 
+    # set -g automatic-rename off
+    # set -g allow-rename off
     extraConfig = ''
-      set -g default-terminal "xterm-256color"
+      set -g default-terminal "tmux-256color"
       set -ag terminal-overrides ",xterm-256color:RGB"
-      set-option -a terminal-features "alacritty:RGB"
+      set-option -as terminal-features ",foot:RGB,alacritty:RGB,xterm-256color:RGB"
       set -sg repeat-time 600
+      set -g status-interval 30
+      set -g history-limit 500
+
+      set -g mouse off
     '';
   };
 }
