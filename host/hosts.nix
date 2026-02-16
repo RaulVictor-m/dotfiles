@@ -49,10 +49,14 @@ in {
   laptop = nixpkgs.lib.nixosSystem {
     inherit pkgs;
     modules = defaultSysModules ++ [
+      mango.nixosModules.mango
       ./laptop/configuration.nix
       ./laptop/system.nix
       ./laptop/hardware.nix
-    ];
+      ./laptop/blacklist.nix
+      ./commum/wayland.nix
+
+      ];
 
     specialArgs = {
         inherit user pkgs-unstable;

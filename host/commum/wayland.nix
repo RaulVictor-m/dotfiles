@@ -3,6 +3,7 @@
 {
   programs.xwayland.enable = true;
   programs.sway.enable = true;
+  programs.mango.enable = true;
 
   xdg.portal = {
     enable = true;
