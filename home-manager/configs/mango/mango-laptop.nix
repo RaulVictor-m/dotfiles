@@ -15,9 +15,13 @@
   };
 
   home.file.".config/mango/config.conf".text = ''
+    # AUTOSTART
+        exec-once=swaybg -i ~/dotfiles/home-manager/configs/wallpaper.jpg
+
     # CONFIG
         idleinhibit_ignore_visible = 0
-        # monitorrule                = HDMI-A-1,0.8,1,scroller,0,1,0,0,1920,1080,60
+        monitorrule                = name:eDP-1,width:1366,height:768
+        tagrule                    = id:0,layout_name:scroller
         syncobj_enable             = 0
         allow_tearing              = 1
         animations                 = 0
@@ -36,9 +40,9 @@
         enable_floating_snap       = 0
 
     # LAYOUT: SCROLLER
-        scroller_structs                   = 35
-        scroller_proportion_preset         = 0.9,0.5
-        scroller_default_proportion        = 0.9
+        scroller_structs                   = 5
+        scroller_proportion_preset         = 0.95,0.5
+        scroller_default_proportion        = 0.95
         scroller_focus_center              = 0
         scroller_prefer_center             = 0
         edge_scroller_pointer_focus        = 0
@@ -47,7 +51,6 @@
 
     # BIND: TOOLS AND CONTROL
         bind=SUPER,d,spawn,wmenu-run -f 20
-        bind=SUPER,b,spawn,killall -s SIGUSR1 -r waybar
 
         bind=SUPER+SHIFT,Return,spawn,foot
         bind=SUPER+SHIFT,q,killclient
