@@ -17,6 +17,7 @@
       qutebrowser
       brave
       alacritty
+      st
       foot
       zathura
       feh
@@ -56,6 +57,7 @@
     brave
     chromium
     alacritty
+    st
     foot
     zathura
     mpv
