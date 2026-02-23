@@ -12,7 +12,8 @@
   };
 
   programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-  users.users."${user}".shell = pkgs.zsh;
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
+  users.users."${user}".shell = pkgs.fish;
 }
 
