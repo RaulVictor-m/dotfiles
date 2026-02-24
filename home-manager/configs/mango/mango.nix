@@ -21,7 +21,7 @@
 
     # CONFIG
         idleinhibit_ignore_visible = 1
-        monitorrule                = HDMI-A-1,0.8,1,scroller,0,1,0,0,1920,1080,60
+        monitorrule                = name:HDMI-A-1,width:1920,height:1080,layout_name:scroller
         syncobj_enable             = 0
         allow_tearing              = 1
         animations                 = 1

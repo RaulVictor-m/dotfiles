@@ -20,7 +20,7 @@
 
     # CONFIG
         idleinhibit_ignore_visible = 0
-        monitorrule                = name:eDP-1,width:1366,height:768
+        monitorrule                = name:eDP-1,width:1366,height:768,layout_name:scroller
         tagrule                    = id:0,layout_name:scroller
         syncobj_enable             = 0
         allow_tearing              = 1
