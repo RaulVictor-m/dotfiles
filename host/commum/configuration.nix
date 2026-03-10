@@ -6,6 +6,7 @@
   environment.variables.TERM = "xterm-256color";
   environment.variables.WINIT_X11_SCALE_FACTOR= 1;
   services.dbus.enable = true;
+  documentation.dev.enable = true;
 
   system.stateVersion = "25.05";
 }

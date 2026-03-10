@@ -69,6 +69,8 @@
     xclip
     xdo
     xdotool
+    man-pages
+    man-pages-posix
 
     # utils
     brightnessctl
