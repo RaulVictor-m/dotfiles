@@ -49,8 +49,7 @@
     hook global BufNewFile [^*]* editorconfig-load
 
     complete-command man shell-script-candidates %{
-        find /usr/share/man/ $(man -w |
-            sed 's/:/ /') -name '*.[1-8]*' |
+        find -L $(man -w | tr ':' ' ') -name '*.[1-8]*' |
             sed 's,^.*/\(.*\)\.\([1-8][a-zA-Z]*\).*$,\1(\2),'
     }
 
