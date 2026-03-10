@@ -48,6 +48,12 @@
     hook global BufOpenFile [^*]* editorconfig-load
     hook global BufNewFile [^*]* editorconfig-load
 
+    complete-command man shell-script-candidates %{
+        find /usr/share/man/ $(man -w |
+            sed 's/:/ /') -name '*.[1-8]*' |
+            sed 's,^.*/\(.*\)\.\([1-8][a-zA-Z]*\).*$,\1(\2),'
+    }
+
     require-module make
     define-command -params .. -docstring %{
         your shell comand for compilation with make style errors
