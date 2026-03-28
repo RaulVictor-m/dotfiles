@@ -2,6 +2,7 @@
 
 {
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.trusted-users = ["root" "@wheel"];
   environment.variables.EDITOR = "kak";
   environment.variables.TERM = "xterm-256color";
   environment.variables.WINIT_X11_SCALE_FACTOR= 1;
