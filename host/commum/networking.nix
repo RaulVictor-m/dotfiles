@@ -27,4 +27,33 @@
       ];
     };
   };
+
+  programs.ssh = {
+    extraConfig = "
+      Host desktop
+        Hostname nixos-desktop
+        Port 22
+        User ${user}
+        IdentityFile /home/${user}/.ssh/id_ed25519
+
+      Host laptop
+        Hostname nixos-laptop
+        Port 22
+        User ${user}
+        IdentityFile /home/${user}/.ssh/id_ed25519
+
+      Host github.com
+        Hostname github.com
+        Port 22
+        User git
+        IdentityFile /home/${user}/.ssh/id_ed25519
+
+      Host github-fatec
+        Hostname github.com
+        Port 22
+        User git
+        IdentityFile /home/${user}/.ssh/id_github2
+    ";
+  };
+
 }
