@@ -23,6 +23,7 @@
     "${user}" = {
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJubNZMmt1st/vEjFXyzW8IiVqciKnfA9dgAXPvhekou raul@nixos-laptop"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHLfjJeW1cIfZquMI7Jn6w9rfMb6CohqG4wxZPBKO7H/ raul@nixos-desktop"
       ];
     };
   };
