@@ -60,6 +60,7 @@
     st
     foot
     zathura
+    libreoffice
     mpv
     fish
     zsh
