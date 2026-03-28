@@ -18,4 +18,12 @@
       AllowUsers = [ "${user}" ];
     };
   };
+
+  users.users = {
+    "${user}" = {
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJubNZMmt1st/vEjFXyzW8IiVqciKnfA9dgAXPvhekou raul@nixos-laptop"
+      ];
+    };
+  };
 }
