@@ -8,6 +8,7 @@ let
     ./commum/system.nix
     ./commum/xsession.nix
     ./commum/shell.nix
+    ./commum/wine.nix
 
     ./commum/graphics.nix
   ];
