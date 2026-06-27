@@ -4,9 +4,9 @@ pkgs.stdenv.mkDerivation {
   pname  = "dwm";
   version = "1.0";
   buildInputs = with pkgs; [
-    xorg.libX11
-    xorg.libXft
-    xorg.libXinerama
+    libX11
+    libXft
+    libXinerama
     gnumake
     gcc
     pkg-config
