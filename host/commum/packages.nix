@@ -14,12 +14,13 @@
       unzip
       gnutar
 
-      qutebrowser
+      pkgs-unstable.qutebrowser
       brave
       alacritty
       st
       foot
       zathura
+      typst
       feh
       fish
 
@@ -53,13 +54,14 @@
     go
     gopls
 
-    qutebrowser
+    pkgs-unstable.qutebrowser
     brave
     chromium
     alacritty
     st
     foot
     zathura
+    typst
     libreoffice
     mpv
     fish
